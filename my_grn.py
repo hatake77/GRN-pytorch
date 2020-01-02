@@ -14,12 +14,6 @@ def collect_neighbor_v2(representation, positions):
     return representation[indices[:, :, :, 0], indices[:, :, :, 1], :]
 
 class GRN(nn.Module):
-    """
-    Gated Graph Sequence Neural Networks (GGNN)
-    Mode: SelectNode
-    Implementation based on https://arxiv.org/abs/1511.05493
-    """
-
     def __init__(self, options, word_dim, edgelabel_vocab, sentence_dim):
         super(GRN, self).__init__()
 
