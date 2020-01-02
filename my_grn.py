@@ -7,7 +7,7 @@ def collect_neighbor_v2(representation, positions):
     batch_size = positions.size(0)
     node_num = positions.size(1)
     neigh_num = positions.size(2)
-    rids = torch.arrange(0, limit=batch_size) # [batch]
+    rids = torch.arrange(0,batch_size) # [batch]
     rids = rids.reshape([-1, 1, 1]) # [batch, 1, 1]
     rids = rids.repeat(1, node_num, neigh_num) # [batch, nodes, neighbors]
     indices = torch.stack((rids, positions),3) # [batch, nodes, neighbors, 2]
